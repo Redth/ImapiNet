@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imapi.Net", "..\source\Imapi.Net\Imapi.Net.csproj", "{AD59E121-42B9-4496-B631-DC112C223561}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imapi.Tests", "..\source\Imapi.Tests\Imapi.Tests.csproj", "{91F4C4DE-DD48-48A5-AE75-DA3764D559B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Shipping|Any CPU = Shipping|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD59E121-42B9-4496-B631-DC112C223561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD59E121-42B9-4496-B631-DC112C223561}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD59E121-42B9-4496-B631-DC112C223561}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD59E121-42B9-4496-B631-DC112C223561}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD59E121-42B9-4496-B631-DC112C223561}.Shipping|Any CPU.ActiveCfg = Shipping|Any CPU
+		{AD59E121-42B9-4496-B631-DC112C223561}.Shipping|Any CPU.Build.0 = Shipping|Any CPU
+		{91F4C4DE-DD48-48A5-AE75-DA3764D559B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F4C4DE-DD48-48A5-AE75-DA3764D559B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F4C4DE-DD48-48A5-AE75-DA3764D559B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F4C4DE-DD48-48A5-AE75-DA3764D559B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91F4C4DE-DD48-48A5-AE75-DA3764D559B8}.Shipping|Any CPU.ActiveCfg = Shipping|Any CPU
+		{91F4C4DE-DD48-48A5-AE75-DA3764D559B8}.Shipping|Any CPU.Build.0 = Shipping|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AD59E121-42B9-4496-B631-DC112C223561}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Imapi.Net</RootNamespace>
+    <AssemblyName>Imapi.Net</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Shipping|AnyCPU' ">
+    <OutputPath>bin\Shipping\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Shipping\Imapi.Net.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <WarningLevel>0</WarningLevel>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DiscMaster.cs" />
+    <Compile Include="DiscMasterProgressEvents.cs" />
+    <Compile Include="DiscRecorder.cs" />
+    <Compile Include="DiscRecorderCollection.cs" />
+    <Compile Include="EstimatedTimeOperationEventArgs.cs" />
+    <Compile Include="Interop\Enumerations\BootImageEmulationType.cs" />
+    <Compile Include="Interop\Enumerations\BootImagePlatform.cs" />
+    <Compile Include="Interop\Enumerations\ClsCtx.cs" />
+    <Compile Include="Interop\Enumerations\MediaFlags.cs" />
+    <Compile Include="Interop\Enumerations\MediaType.cs" />
+    <Compile Include="Interop\Enumerations\PrpSpec.cs" />
+    <Compile Include="Interop\Enumerations\RecorderState.cs" />
+    <Compile Include="Interop\Enumerations\RecorderType.cs" />
+    <Compile Include="Interop\Enumerations\StatFlag.cs" />
+    <Compile Include="Interop\Enumerations\STGC.cs" />
+    <Compile Include="Interop\Enumerations\STGM.cs" />
+    <Compile Include="Interop\Enumerations\STGMove.cs" />
+    <Compile Include="Interop\Enumerations\STGTY.cs" />
+    <Compile Include="Interop\Enumerations\StreamSeek.cs" />
+    <Compile Include="Interop\ErrorCodes.cs" />
+    <Compile Include="Interop\Exceptions\AudioTrackTooShortException.cs" />
+    <Compile Include="Interop\Exceptions\BadJolietNameException.cs" />
+    <Compile Include="Interop\Exceptions\CompressedStashException.cs" />
+    <Compile Include="Interop\Exceptions\ContentStreamingException.cs" />
+    <Compile Include="Interop\Exceptions\Copy of InvalidHeaderException.cs" />
+    <Compile Include="Interop\Exceptions\CorruptImageException.cs" />
+    <Compile Include="Interop\Exceptions\DeviceNotAccessibleException.cs" />
+    <Compile Include="Interop\Exceptions\DeviceNotPresentException.cs" />
+    <Compile Include="Interop\Exceptions\DeviceUnavailableException.cs" />
+    <Compile Include="Interop\Exceptions\DiscFullException.cs" />
+    <Compile Include="Interop\Exceptions\DiscInfoException.cs" />
+    <Compile Include="Interop\Exceptions\DiscMasterAlreadyOpenedException.cs" />
+    <Compile Include="Interop\Exceptions\DiscMasterNotOpenedException.cs" />
+    <Compile Include="Interop\Exceptions\EncryptedStashException.cs" />
+    <Compile Include="Interop\Exceptions\FileExistsException.cs" />
+    <Compile Include="Interop\Exceptions\FileSystemAccessException.cs" />
+    <Compile Include="Interop\Exceptions\GenericUnexpectedUnexplainedException.cs" />
+    <Compile Include="Interop\Exceptions\ImapiException.cs" />
+    <Compile Include="Interop\Exceptions\InitializeCloseException.cs" />
+    <Compile Include="Interop\Exceptions\InitializeWriteException.cs" />
+    <Compile Include="Interop\Exceptions\InsufficientMemoryException.cs" />
+    <Compile Include="Interop\Exceptions\InvalidDeviceTypeException.cs" />
+    <Compile Include="Interop\Exceptions\InvalidHeaderException.cs" />
+    <Compile Include="Interop\Exceptions\InvalidImageException.cs" />
+    <Compile Include="Interop\Exceptions\InvalidMediaException.cs" />
+    <Compile Include="Interop\Exceptions\InvalidParameterException.cs" />
+    <Compile Include="Interop\Exceptions\InvalidPointerException.cs" />
+    <Compile Include="Interop\Exceptions\InvalidStorageFunctionException.cs" />
+    <Compile Include="Interop\Exceptions\InvalidStorageNameException.cs" />
+    <Compile Include="Interop\Exceptions\MediaNotPresentException.cs" />
+    <Compile Include="Interop\Exceptions\MediumFullException.cs" />
+    <Compile Include="Interop\Exceptions\MethodNotImplementedException.cs" />
+    <Compile Include="Interop\Exceptions\NoActiveFormatException.cs" />
+    <Compile Include="Interop\Exceptions\NoActiveRecorderException.cs" />
+    <Compile Include="Interop\Exceptions\NoDevicePropertiesException.cs" />
+    <Compile Include="Interop\Exceptions\NotEnoughDiskForStashException.cs" />
+    <Compile Include="Interop\Exceptions\OutOfMemoryException.cs" />
+    <Compile Include="Interop\Exceptions\PropertySetMismatchException.cs" />
+    <Compile Include="Interop\Exceptions\ReadFaultException.cs" />
+    <Compile Include="Interop\Exceptions\RecorderNotInitializedException.cs" />
+    <Compile Include="Interop\Exceptions\RemovableStashException.cs" />
+    <Compile Include="Interop\Exceptions\StashInUseException.cs" />
+    <Compile Include="Interop\Exceptions\StorageAccessDeniedException.cs" />
+    <Compile Include="Interop\Exceptions\StorageFileAlreadyExistsException.cs" />
+    <Compile Include="Interop\Exceptions\StorageNotCurrentException.cs" />
+    <Compile Include="Interop\Exceptions\StorageRevertedException.cs" />
+    <Compile Include="Interop\Exceptions\TooManyOpenFilesException.cs" />
+    <Compile Include="Interop\Exceptions\TrackNotOpenException.cs" />
+    <Compile Include="Interop\Exceptions\TrackOpenException.cs" />
+    <Compile Include="Interop\Exceptions\UnexpectedErrorException.cs" />
+    <Compile Include="Interop\Exceptions\UserAbortException.cs" />
+    <Compile Include="Interop\Exceptions\WriteFaultException.cs" />
+    <Compile Include="Interop\Exceptions\WrongDiscException.cs" />
+    <Compile Include="Interop\Exceptions\WrongFormetException.cs" />
+    <Compile Include="Interop\Interfaces\IDiscMaster.cs" />
+    <Compile Include="Interop\Interfaces\IDiscMasterProgressEvents.cs" />
+    <Compile Include="Interop\Interfaces\IDiscRecorder.cs" />
+    <Compile Include="Interop\Interfaces\IEnumDiscMasterFormats.cs" />
+    <Compile Include="Interop\Interfaces\IEnumDiscRecorders.cs" />
+    <Compile Include="Interop\Interfaces\IEnumSTATPROPSTG.cs" />
+    <Compile Include="Interop\Interfaces\IEnumSTATSTG.cs" />
+    <Compile Include="Interop\Interfaces\IJolietDiscMaster.cs" />
+    <Compile Include="Interop\Interfaces\IPropertyStorage.cs" />
+    <Compile Include="Interop\Interfaces\IRedbookDiscMaster.cs" />
+    <Compile Include="Interop\Interfaces\IStorage.cs" />
+    <Compile Include="Interop\ManagedFileIStream.cs" />
+    <Compile Include="Interop\ManagedIStream.cs" />
+    <Compile Include="Interop\MediaDetails.cs" />
+    <Compile Include="Interop\NativeMethods.cs" />
+    <Compile Include="Interop\PinnedByteBuffer.cs" />
+    <Compile Include="Interop\ProgressEventArgs.cs" />
+    <Compile Include="Interop\Property.cs" />
+    <Compile Include="Interop\PropertyStorage.cs" />
+    <Compile Include="Interop\QueryCancelEventArgs.cs" />
+    <Compile Include="Interop\Structs\PropSpec.cs" />
+    <Compile Include="Interop\Structs\StatPropSetSTG.cs" />
+    <Compile Include="Interop\Structs\StatPropSTG.cs" />
+    <Compile Include="Interop\CompletionStatusEventArgs.cs" />
+    <Compile Include="Interop\Util\ComUtilities.cs" />
+    <Compile Include="Interop\Util\EventLogger.cs" />
+    <Compile Include="Interop\Util\FileLogger.cs" />
+    <Compile Include="Interop\Util\ILogger.cs" />
+    <Compile Include="JolietDiscMaster.cs" />
+    <Compile Include="JolietDiscMasterStorage.cs" />
+    <Compile Include="JolietEnumStatStg.cs" />
+    <Compile Include="JolietStorage.cs" />
+    <Compile Include="ObjectModel\Disposable.cs" />
+    <Compile Include="ObjectModel\EventArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RedbookDiscMaster.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

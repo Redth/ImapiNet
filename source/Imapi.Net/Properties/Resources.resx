@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Error_Msg_DiscMasterProgressEvents_CookiePrevSet" xml:space="preserve">
+    <value>Cookie has been previously set.</value>
+  </data>
+  <data name="Error_Msg_DiscMaster_CoCreateFailed" xml:space="preserve">
+    <value>Failed to instantiate the IDiscMaster implementation.</value>
+  </data>
+  <data name="Error_Msg_DiscRecorderCollection_ReadOnly" xml:space="preserve">
+    <value>DiscRecorderCollection is ReadOnly.</value>
+  </data>
+  <data name="Error_Msg_E_INVALIDARGUMENT" xml:space="preserve">
+    <value>Invalid Argument</value>
+  </data>
+  <data name="Error_Msg_E_NOTIMPL" xml:space="preserve">
+    <value>The called method is not yet implemented.</value>
+  </data>
+  <data name="Error_Msg_E_OUTOFMEMORY" xml:space="preserve">
+    <value>Could not complete the operation. Out of memory.</value>
+  </data>
+  <data name="Error_Msg_E_UNEXPECTED" xml:space="preserve">
+    <value>An unexpected catastrophic failure has occurred. </value>
+  </data>
+  <data name="Error_Msg_General_E_ABORT" xml:space="preserve">
+    <value>The operation was aborted because of an unspecified error.</value>
+  </data>
+  <data name="Error_Msg_General_E_ACCESSDENIED" xml:space="preserve">
+    <value>A general access-denied error ocurred.</value>
+  </data>
+  <data name="Error_Msg_General_E_FAIL" xml:space="preserve">
+    <value>An unspecified failure has occurred.</value>
+  </data>
+  <data name="Error_Msg_General_E_HANDLE" xml:space="preserve">
+    <value>An invalid handle was used.</value>
+  </data>
+  <data name="Error_Msg_General_E_INVALIDARG" xml:space="preserve">
+    <value>One or more arguments are invalid. </value>
+  </data>
+  <data name="Error_Msg_General_E_NOINTERFACE" xml:space="preserve">
+    <value>The QueryInterface method did not recognize the requested interface or the interface is not supported.</value>
+  </data>
+  <data name="Error_Msg_General_E_NOTIMPL" xml:space="preserve">
+    <value>The desired method has not been implemented.</value>
+  </data>
+  <data name="Error_Msg_General_E_OUTOFMEMORY" xml:space="preserve">
+    <value>The method failed to allocate necessary memory.</value>
+  </data>
+  <data name="Error_Msg_General_E_PENDING" xml:space="preserve">
+    <value>The data necessary to Complete the operation is not yet available. </value>
+  </data>
+  <data name="Error_Msg_General_E_POINTER" xml:space="preserve">
+    <value>An invalid pointer was used.</value>
+  </data>
+  <data name="Error_Msg_General_E_UNEXPECTED" xml:space="preserve">
+    <value>An unexpected catastrophic failure has occurred. </value>
+  </data>
+  <data name="Error_Msg_General_S_FALSE" xml:space="preserve">
+    <value>The method succeeded and returned the boolean value FALSE.</value>
+  </data>
+  <data name="Error_Msg_General_S_OK" xml:space="preserve">
+    <value>The method succeeded. If a boolean return value is expected; the returned value is TRUE.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_ALREADYOPEN" xml:space="preserve">
+    <value>A call to IDiscMaster::Open has already been made against this object by your application.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_BADJOLIETNAME" xml:space="preserve">
+    <value>The application tried to add a badly named element to a disc.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_BOOTIMAGE_AND_NONBLANK_DISC" xml:space="preserve">
+    <value>Attempt to create a bootable image on a non-blank disc.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_CANNOT_WRITE_TO_MEDIA" xml:space="preserve">
+    <value>Cannot write to the media.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_COMPRESSEDSTASH" xml:space="preserve">
+    <value>The stash is located on a Compressed volume and cannot be read.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_DEVICE_INVALIDTYPE" xml:space="preserve">
+    <value>The recorder does not support an operation.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_DEVICE_NOPROPERTIES" xml:space="preserve">
+    <value>The recorder does not support any properties.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_DEVICE_NOTACCESSIBLE" xml:space="preserve">
+    <value>The device cannot be used or is already in use.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_DEVICE_NOTPRESENT" xml:space="preserve">
+    <value>The device is not present or has been removed.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_DEVICE_STILL_IN_USE" xml:space="preserve">
+    <value>Another application is already using this device, so Imapi cannot access the device.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_DISCFULL" xml:space="preserve">
+    <value>The disc is full.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_DISCINFO" xml:space="preserve">
+    <value>An error occurred while trying to read disc data from the device.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_ENCRYPTEDSTASH" xml:space="preserve">
+    <value>The stash is located on an encrypted volume and cannot be read.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_FILEACCESS" xml:space="preserve">
+    <value>An error occurred while writing the image file.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_FILEEXISTS" xml:space="preserve">
+    <value>The file to add is already in the image file and the overwrite flag was not set.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_FILESYSTEM" xml:space="preserve">
+    <value>An error occurred while enabling/disabling file system access or during auto-insertion detection.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_GENERIC" xml:space="preserve">
+    <value>A generic error occurred.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_INITIALIZE_ENDWRITE" xml:space="preserve">
+    <value>The drive interface could not be initialized for closing.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_INITIALIZE_WRITE" xml:space="preserve">
+    <value>The drive interface could not be initialized for writing.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_INVALIDIMAGE" xml:space="preserve">
+    <value>The staged image is not suitable for a burn. It has been corrupted or cleared and has no usable content.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_LOSS_OF_STREAMING" xml:space="preserve">
+    <value>Content streaming was lost; a buffer under-run may have occurred.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_MEDIUM_INVALIDTYPE" xml:space="preserve">
+    <value>The media is not a type that can be used.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_MEDIUM_NOTPRESENT" xml:space="preserve">
+    <value>There is no disc in the active recording device.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_NOACTIVEFORMAT" xml:space="preserve">
+    <value>An active format master has not been selected using IDiscMaster::SetActiveDiscMasterFormat.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_NOACTIVERECORDER" xml:space="preserve">
+    <value>An active disc recorder has not been selected using IDiscMaster::SetActiveDiscRecorder.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_NOTENOUGHDISKFORSTASH" xml:space="preserve">
+    <value>There is not enough free space to create the stash file on the specified volume.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_NOTINITIALIZED" xml:space="preserve">
+    <value>A recorder object has not been initialized.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_NOTOPENED" xml:space="preserve">
+    <value>A call to IDiscMaster::Open has not been made.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_REMOVABLESTASH" xml:space="preserve">
+    <value>The selected stash location is on a removable media.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_STASHINUSE" xml:space="preserve">
+    <value>Another application is already using the Imapi stash file required to stage a disc image. Try again later.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_TRACKNOTOPEN" xml:space="preserve">
+    <value>An audio track is not open for writing.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_TRACKOPEN" xml:space="preserve">
+    <value>An open audio track is already being staged.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_TRACK_NOT_BIG_ENOUGH" xml:space="preserve">
+    <value>Track was too short.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_USERABORT" xml:space="preserve">
+    <value>The user canceled the operation.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_WRONGDISC" xml:space="preserve">
+    <value>The Imapi multi-session disc has been removed from the active recorder.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_E_WRONGFORMAT" xml:space="preserve">
+    <value>A call to IJolietDiscMaster has been made when IRedbookDiscMaster is the active format, or vice versa. To use a different format, change the format and clear the image file contents.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_S_BUFFER_TOO_SMALL" xml:space="preserve">
+    <value>The buffer is too small.</value>
+  </data>
+  <data name="Error_Msg_IMAPI_S_PROPERTIESIGNORED" xml:space="preserve">
+    <value>An unknown property was passed in a property set and it was ignored.</value>
+  </data>
+  <data name="Error_Msg_JolietStorage_CouldNotCreateStorage" xml:space="preserve">
+    <value>Could not create storage.</value>
+  </data>
+  <data name="Error_Msg_JolietStorage_pstgPriority_null" xml:space="preserve">
+    <value>The parameter pstgPriority must be null.</value>
+  </data>
+  <data name="Error_Msg_JolietStorage_Reserved1" xml:space="preserve">
+    <value>The parameter reserved1 must be 0.</value>
+  </data>
+  <data name="Error_Msg_JolietStorage_reserved1_null" xml:space="preserve">
+    <value>The parameter reserved1 must be null.</value>
+  </data>
+  <data name="Error_Msg_JolietStorage_Reserved2" xml:space="preserve">
+    <value>The parameter reserved2 must be null.</value>
+  </data>
+  <data name="Error_Msg_JolietStorage_reserved2_0" xml:space="preserve">
+    <value>The parameter reserved2 must be 0.</value>
+  </data>
+  <data name="Error_Msg_JolietStorage_Reserved3" xml:space="preserve">
+    <value>The parameter reserved3 must be 0.</value>
+  </data>
+  <data name="Error_Msg_JolietStorage_reserved_0" xml:space="preserve">
+    <value>The parameter reserved must be 0.</value>
+  </data>
+  <data name="Error_Msg_JolietStorage_snbExclude_null" xml:space="preserve">
+    <value>The parameter snbExclude must be null.</value>
+  </data>
+  <data name="Error_Msg_ManagedIStream_BufferBiggerThanZero" xml:space="preserve">
+    <value>Buffer size must be greater than 0.</value>
+  </data>
+  <data name="Error_Msg_PinnedByteBuffer_BufferBiggerThanZero" xml:space="preserve">
+    <value>Buffer size must be greater than 0.</value>
+  </data>
+  <data name="Error_Msg_RedbookDiscMaster_AddAtLeastOneByte" xml:space="preserve">
+    <value>There must be at least 1 byte added.</value>
+  </data>
+  <data name="Error_Msg_RedbookDiscMaster_AtLeastOneAudioBlock" xml:space="preserve">
+    <value>There must be at least 1 audio block in a track.</value>
+  </data>
+  <data name="Error_Msg_RedbookDiscMaster_AtLeastOneByte" xml:space="preserve">
+    <value>There must be at least 1 byte.</value>
+  </data>
+  <data name="Error_Msg_RedbookDiscMaster_AudioFileNotFound" xml:space="preserve">
+    <value>Could not open audio file. The file was not found.</value>
+  </data>
+  <data name="Error_Msg_RPC_X_NULL_REF_POINTER" xml:space="preserve">
+    <value>A null reference pointer was passed to the stub.</value>
+  </data>
+  <data name="Error_Msg_STG_E_ACCESSDENIED" xml:space="preserve">
+    <value>The requested access to the property set has been denied, or, when one or more of the properties is a stream or storage object, access to that substorage or substream has been denied. The storage or stream may already be open. No properties were retrieved.</value>
+  </data>
+  <data name="Error_Msg_STG_E_FILEALREADYEXISTS" xml:space="preserve">
+    <value>File already exists.</value>
+  </data>
+  <data name="Error_Msg_STG_E_FILENOTFOUND" xml:space="preserve">
+    <value>A storage-related error has occurred; specifically; a requested file does not exist.</value>
+  </data>
+  <data name="Error_Msg_STG_E_INSUFFICIENTMEMORY" xml:space="preserve">
+    <value>Insufficient memory exists to perform this operation. No properties were retrieved. For computers running on Windows NT 4.0 and earlier, the size limit is 256 KB. For computers running on Windows 2000, Windows XP, and Windows Server 2003, the limit is 1 MB for OLE property sets.</value>
+  </data>
+  <data name="Error_Msg_STG_E_INVALIDFLAG" xml:space="preserve">
+    <value>The value for the grfCommitFlags parameter is not valid.</value>
+  </data>
+  <data name="Error_Msg_STG_E_INVALIDFUNCTION" xml:space="preserve">
+    <value>Locking is not supported at all or the specific type of lock requested is not supported.</value>
+  </data>
+  <data name="Error_Msg_STG_E_INVALIDHEADER" xml:space="preserve">
+    <value>The property name dictionary was not found. </value>
+  </data>
+  <data name="Error_Msg_STG_E_INVALIDNAME" xml:space="preserve">
+    <value>The name is too long, it has incorrect syntax, or it has illegal characters.</value>
+  </data>
+  <data name="Error_Msg_STG_E_INVALIDPARAMETER" xml:space="preserve">
+    <value>At least one of the parameters is invalid; for example, when one of the PROPSPEC structures contains an illegal value of the ulKind member. If the ulKind member is set to a string name instead of a property set value, some properties may not be retrieved.</value>
+  </data>
+  <data name="Error_Msg_STG_E_INVALIDPOINTER" xml:space="preserve">
+    <value>An invalid pointer was passed.</value>
+  </data>
+  <data name="Error_Msg_STG_E_MEDIUMFULL" xml:space="preserve">
+    <value>The disk is full or the property-set size limit of 256 KB has been exceeded. Some properties may or may not have been written. For more information, see the Remarks section.</value>
+  </data>
+  <data name="Error_Msg_STG_E_NOTCURRENT" xml:space="preserve">
+    <value>STGC_ONLYIFCURRENT was specified, but the optimistic concurrency control failed.</value>
+  </data>
+  <data name="Error_Msg_STG_E_PROPSETMISMATCHED" xml:space="preserve">
+    <value>An attempt was made to write a nonsimple (stream- or storage-valued) property to a simple property set. </value>
+  </data>
+  <data name="Error_Msg_STG_E_READFAULT" xml:space="preserve">
+    <value>Error reading the storage.</value>
+  </data>
+  <data name="Error_Msg_STG_E_REVERTED" xml:space="preserve">
+    <value>The property set was reverted. For example, if the property set is deleted while open, by using IPropertySetStorage::Delete, this status would be returned. </value>
+  </data>
+  <data name="Error_Msg_STG_E_TOOMANYOPENFILES" xml:space="preserve">
+    <value>There are insufficient resources to open another file.</value>
+  </data>
+  <data name="Error_Msg_STG_E_WRITEFAULT" xml:space="preserve">
+    <value>An error occurred when writing the storage.</value>
+  </data>
+  <data name="Variables_pstgPriority" xml:space="preserve">
+    <value>pstgPriority</value>
+  </data>
+  <data name="Variables_reserved" xml:space="preserve">
+    <value>reserved</value>
+  </data>
+  <data name="Variables_reserved1" xml:space="preserve">
+    <value>reserved1</value>
+  </data>
+  <data name="Variables_reserved2" xml:space="preserve">
+    <value>reserved2</value>
+  </data>
+  <data name="Variables_reserved3" xml:space="preserve">
+    <value>reserved3</value>
+  </data>
+  <data name="Variables_snbExclude" xml:space="preserve">
+    <value>snbExclude</value>
+  </data>
+  <data name="IDiscMasterGUID" xml:space="preserve">
+    <value>520CCA62-51A5-11D3-9144-00104BA11C5E</value>
+  </data>
+  <data name="IJolietDiscMasterGUID" xml:space="preserve">
+    <value>E3BC42CE-4E5C-11D3-9144-00104BA11C5E</value>
+  </data>
+  <data name="IRedbookDiscMasterGUID" xml:space="preserve">
+    <value>E3BC42CD-4E5C-11D3-9144-00104BA11C5E</value>
+  </data>
+  <data name="MSDiscMasterObjGUID" xml:space="preserve">
+    <value>520CCA63-51A5-11D3-9144-00104BA11C5E</value>
+  </data>
+</root>
