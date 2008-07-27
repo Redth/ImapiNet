@@ -2,6 +2,7 @@
 
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Security.Permissions;
 
 #endregion
 
@@ -9,12 +10,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly : AssemblyTitle( "Imapi.Tests" )]
+[assembly : AssemblyTitle( "Imapi.NET Test Application" )]
 [assembly : AssemblyDescription( "" )]
 [assembly : AssemblyConfiguration( "" )]
-[assembly : AssemblyCompany( "Tometa Software, Inc." )]
-[assembly : AssemblyProduct( "Imapi.Tests" )]
-[assembly : AssemblyCopyright( "Copyright © Tometa Software, Inc. 2008" )]
+[assembly : AssemblyCompany( "" )]
+[assembly : AssemblyProduct( "Imapi.NET Test Application" )]
+[assembly : AssemblyCopyright( "Copyright © 2006" )]
 [assembly : AssemblyTrademark( "" )]
 [assembly : AssemblyCulture( "" )]
 
@@ -26,7 +27,7 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 
-[assembly : Guid( "02d1bd8e-ec01-4f79-a739-b65c2b9b653f" )]
+[assembly : Guid( "7db97bd7-797d-419d-a433-fbb36e201c46" )]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -35,9 +36,11 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-// You can specify all the values or you can default the Build and Revision Numbers 
-// by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
 
 [assembly : AssemblyVersion( "1.0.0.0" )]
 [assembly : AssemblyFileVersion( "1.0.0.0" )]
+
+// Request the proper security permissions
+//[assembly: PermissionSet(SecurityAction.RequestMinimum, Unrestricted=true)]
+
+[assembly : PermissionSet( SecurityAction.RequestMinimum, Unrestricted = true )]

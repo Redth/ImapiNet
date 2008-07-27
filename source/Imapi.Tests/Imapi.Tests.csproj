@@ -56,6 +56,12 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComUtilitiesTest.cs" />
+    <Compile Include="DiscMasterTest.cs" />
+    <Compile Include="DiscRecorderCollectionTest.cs" />
+    <Compile Include="JolietDiscMasterStorageTest.cs" />
+    <Compile Include="JolietStorageTest.cs" />
+    <Compile Include="PinnedByteBufferTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
