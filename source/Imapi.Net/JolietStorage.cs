@@ -760,7 +760,7 @@ namespace Imapi.Net.Interop
         /// runtime from inside the finalizer and you should not reference 
         /// other objects. Only unmanaged resources can be disposed.
         /// </param>
-        protected virtual void Dispose( bool disposing )
+        protected override void Dispose( bool disposing )
         {
             // Check to see if Dispose has already been called.
             if ( disposing && !IsDisposed )

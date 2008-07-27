@@ -71,7 +71,7 @@ namespace Imapi.Net.Interop
 
         /// <summary>
         /// Releases unmanaged resources and performs other cleanup operations before the
-        /// <see cref="Imapi.Net.PinnedByteBuffer"/> is reclaimed by garbage collection.
+        /// <see cref="PinnedByteBuffer"/> is reclaimed by garbage collection.
         /// </summary>
         ~PinnedByteBuffer()
         {

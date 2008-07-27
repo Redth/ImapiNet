@@ -22,7 +22,6 @@
 #region Using Directives
 
 using System.Runtime.InteropServices;
-using Imapi.Net.Interop.Structs;
 
 #endregion Using Directives
 

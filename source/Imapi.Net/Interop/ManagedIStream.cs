@@ -62,7 +62,7 @@ namespace Imapi.Net.Interop
         #region Public Methods and Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ManagedIStream"/> class.
+        /// Initializes a new instance of the <see cref="ManagedIStream{TStream}"/> class.
         /// </summary>
         /// <param name="stream">The stream.</param>
         /// <param name="streamName">Name of the stream.</param>
@@ -80,7 +80,7 @@ namespace Imapi.Net.Interop
 
         /// <summary>
         /// Releases unmanaged resources and performs other cleanup operations before the
-        /// <see cref="Imapi.Net.ManagedIStream"/> is reclaimed by garbage collection.
+        /// <see cref="ManagedIStream{TStream}"/> is reclaimed by garbage collection.
         /// </summary>
         ~ManagedIStream()
         {

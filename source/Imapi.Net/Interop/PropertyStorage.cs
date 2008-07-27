@@ -23,10 +23,10 @@
 
 using System;
 using System.Collections;
+using System.Globalization;
 using System.Runtime.InteropServices;
 using Imapi.Net.Interop.Enumerations;
 using Imapi.Net.Interop.Interfaces;
-using Imapi.Net.Interop.Structs;
 
 #endregion Using Directives
 
@@ -59,7 +59,7 @@ namespace Imapi.Net.Interop
 
         /// <summary>
         /// Releases unmanaged resources and performs other cleanup operations before the
-        /// <see cref="Imapi.Net.PropertyStorage"/> is reclaimed by garbage collection.
+        /// <see cref="PropertyStorage"/> is reclaimed by garbage collection.
         /// </summary>
         ~PropertyStorage()
         {
@@ -148,7 +148,7 @@ namespace Imapi.Net.Interop
                 }
                 else
                 {
-                    name = String.Format( "#{0}", propStg[0].propid );
+                    name = String.Format( CultureInfo.CurrentCulture, "#{0}", propStg[0].propid );
                 }
 
                 var property = new Property( name, propValue, this );

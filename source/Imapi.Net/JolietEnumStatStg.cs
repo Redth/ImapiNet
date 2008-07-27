@@ -185,9 +185,5 @@ namespace Imapi.Net
         }
 
         #endregion
-
-// End void Clone(out IEnumSTATSTG ppenum)
     }
 }
-
-// End namespace Imapi.Net.Interop

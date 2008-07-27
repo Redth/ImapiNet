@@ -27,7 +27,7 @@ using Imapi.Net.Interop.Interfaces;
 
 #endregion Using Directives
 
-namespace Imapi.Net.Interop.Structs
+namespace Imapi.Net.Interop
 {
     /// <summary>
     /// The STATPROPSTG structure contains data about a single property in a

@@ -114,9 +114,9 @@ namespace Imapi.Net.Interop
         /// <param name="lpTargetPath">The lp target path.</param>
         /// <param name="ucchMax">The ucch max.</param>
         /// <returns></returns>
-        [DllImport( "kernel32", CharSet = CharSet.Auto )]
-        internal static extern int QueryDosDevice( [MarshalAs( UnmanagedType.LPTStr )] string lpDeviceName,
-                                                   [MarshalAs( UnmanagedType.LPTStr )] string lpTargetPath, int ucchMax );
+        [DllImport("kernel32", CharSet = CharSet.Unicode, BestFitMapping = false, ThrowOnUnmappableChar = true)]
+        internal static extern int QueryDosDevice( [MarshalAs( UnmanagedType.LPWStr )] string lpDeviceName,
+                                                   [MarshalAs( UnmanagedType.LPWStr )] string lpTargetPath, int ucchMax );
 
         #endregion
     }

@@ -33,7 +33,6 @@ using Imapi.Net.Properties;
 using Imapi.Net.Interop.Enumerations;
 using Imapi.Net.Interop.Exceptions;
 using Imapi.Net.Interop.Interfaces;
-using Imapi.Net.Interop.Structs;
 using Imapi.Net;
 
 #endregion Using Directives

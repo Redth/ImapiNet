@@ -42,7 +42,23 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Analysis|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Analysis\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRules>-Microsoft.Mobility#CA1600;-Microsoft.Mobility#CA1601;-Microsoft.Naming#CA1702;-Microsoft.Naming#CA1700;-Microsoft.Naming#CA1712;-Microsoft.Naming#CA1713;-Microsoft.Naming#CA1714;-Microsoft.Naming#CA1709;-Microsoft.Naming#CA1704;-Microsoft.Naming#CA1708;-Microsoft.Naming#CA1715;-Microsoft.Naming#CA1710;-Microsoft.Naming#CA1720;-Microsoft.Naming#CA1707;-Microsoft.Naming#CA1722;-Microsoft.Naming#CA1711;-Microsoft.Naming#CA1716;-Microsoft.Naming#CA1717;-Microsoft.Naming#CA1725;-Microsoft.Naming#CA1719;-Microsoft.Naming#CA1721;-Microsoft.Naming#CA1701;-Microsoft.Naming#CA1703;-Microsoft.Naming#CA1724;-Microsoft.Naming#CA1726;-Microsoft.Portability#CA1901;-Microsoft.Portability#CA1900</CodeAnalysisRules>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\contrib\log4net\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -141,14 +157,11 @@
     <Compile Include="Interop\Property.cs" />
     <Compile Include="Interop\PropertyStorage.cs" />
     <Compile Include="Interop\QueryCancelEventArgs.cs" />
-    <Compile Include="Interop\Structs\PropSpec.cs" />
-    <Compile Include="Interop\Structs\StatPropSetSTG.cs" />
-    <Compile Include="Interop\Structs\StatPropSTG.cs" />
+    <Compile Include="Interop\PropSpec.cs" />
+    <Compile Include="Interop\StatPropSetSTG.cs" />
+    <Compile Include="Interop\StatPropSTG.cs" />
     <Compile Include="Interop\CompletionStatusEventArgs.cs" />
     <Compile Include="Interop\Util\ComUtilities.cs" />
-    <Compile Include="Interop\Util\EventLogger.cs" />
-    <Compile Include="Interop\Util\FileLogger.cs" />
-    <Compile Include="Interop\Util\ILogger.cs" />
     <Compile Include="JolietDiscMaster.cs" />
     <Compile Include="JolietDiscMasterStorage.cs" />
     <Compile Include="JolietEnumStatStg.cs" />

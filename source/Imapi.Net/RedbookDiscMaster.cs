@@ -48,7 +48,6 @@ namespace Imapi.Net
 
         private const int BLOCK_MULTIPLE = 20;
         private readonly DiscMaster _owner;
-        private readonly object _syncRoot = new object();
         private PinnedByteBuffer _buffer;
         private IRedbookDiscMaster _redbookMaster;
         private int _track;
@@ -79,6 +78,7 @@ namespace Imapi.Net
             _owner = owner;
 
             _redbookMaster = redbookMaster;
+            SyncRoot = new object();
         } // End RedbookDiscMaster(DiscMaster owner, IRedbookDiscMaster redbookMaster)
 
 
@@ -294,7 +294,7 @@ namespace Imapi.Net
 
                 if ( cancel == 0 )
                 {
-                    int size = 0;
+                    var size = 0;
                     while ( ( size = rawAudioStream.Read( _buffer.Bytes, 0, _buffer.Size ) ) > 0 )
                     {
                         size = ZeroTrailingBufferBytes( size );
@@ -383,8 +383,7 @@ namespace Imapi.Net
         /// runtime from inside the finalizer and you should not reference 
         /// other objects. Only unmanaged resources can be disposed.
         /// </param>
-        [EnvironmentPermission( SecurityAction.LinkDemand, Unrestricted = true )]
-        protected virtual void Dispose( bool disposing )
+        protected override void Dispose( bool disposing )
         {
             // Check to see if Dispose has already been called.
             if ( disposing && !IsDisposed )
@@ -442,10 +441,7 @@ namespace Imapi.Net
         /// Gets the sync root.
         /// </summary>
         /// <value>The sync root.</value>
-        public object SyncRoot
-        {
-            get { return _syncRoot; }
-        }
+        public object SyncRoot { get; private set; }
 
         /// <summary>
         /// Gets the number of available track blocks remaining on the disc.
@@ -455,7 +451,7 @@ namespace Imapi.Net
         {
             get
             {
-                int blocks = 0;
+                var blocks = 0;
                 Monitor.Enter( _redbookMaster );
                 try
                 {
@@ -486,7 +482,7 @@ namespace Imapi.Net
         {
             get
             {
-                int blockSize = 0;
+                var blockSize = 0;
                 Monitor.Enter( _redbookMaster );
                 try
                 {
@@ -517,7 +513,7 @@ namespace Imapi.Net
         {
             get
             {
-                int blocks = 0;
+                var blocks = 0;
                 Monitor.Enter( _redbookMaster );
                 try
                 {
@@ -548,7 +544,7 @@ namespace Imapi.Net
         {
             get
             {
-                int blocks = 0;
+                var blocks = 0;
                 Monitor.Enter( _redbookMaster );
                 try
                 {
@@ -579,7 +575,7 @@ namespace Imapi.Net
         {
             get
             {
-                int tracks = 0;
+                var tracks = 0;
                 Monitor.Enter( _redbookMaster );
                 try
                 {
@@ -606,5 +602,3 @@ namespace Imapi.Net
         // End void Dispose(bool disposing)
     }
 }
-
-// End namespace Imapi.Net.Interop

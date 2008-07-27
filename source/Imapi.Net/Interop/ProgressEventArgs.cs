@@ -23,7 +23,7 @@
 
 using System;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop
 {
@@ -35,10 +35,6 @@ namespace Imapi.Net.Interop
     public sealed class ProgressEventArgs : EventArgs
     {
         #region Private Member Variables
-
-        private readonly int _completed;
-        private readonly int _percentComplete;
-        private readonly int _total;
 
         #endregion Private Member Variables
 
@@ -55,9 +51,9 @@ namespace Imapi.Net.Interop
         /// </param>
         public ProgressEventArgs( int completed, int total )
         {
-            _completed = completed;
-            _total = total;
-            _percentComplete = (int) ( 100 * ( (float) completed ) / ( total ) );
+            Completed = completed;
+            Total = total;
+            PercentComplete = (int) ( 100 * ( (float) completed ) / ( total ) );
         }
 
         #endregion Public Methods and Constructors
@@ -68,28 +64,19 @@ namespace Imapi.Net.Interop
         /// Gets the amount Completed for this operation.
         /// </summary>
         /// <value>The completed.</value>
-        public int Completed
-        {
-            get { return _completed; }
-        }
+        public int Completed { get; private set; }
 
         /// <summary>
         /// Gets the total for this operation.
         /// </summary>
         /// <value>The total.</value>
-        public int Total
-        {
-            get { return _total; }
-        }
+        public int Total { get; private set; }
 
         /// <summary>
         /// Get the % of the total that has been completed.
         /// </summary>
         /// <value>The percent complete.</value>
-        public int PercentComplete
-        {
-            get { return _percentComplete; }
-        }
+        public int PercentComplete { get; private set; }
 
         #endregion Public Properties
     }

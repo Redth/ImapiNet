@@ -34,8 +34,6 @@ namespace Imapi.Net.Interop
     {
         #region Private Member Variables
 
-        private readonly IntPtr _status;
-
         #endregion Private Member Variables
 
         #region Public Methods and Constructors
@@ -46,8 +44,8 @@ namespace Imapi.Net.Interop
         /// <param name="status">Status of the operation that has just Completed.</param>
         public CompletionStatusEventArgs( IntPtr status )
         {
-            _status = status;
-        } // End CompletionStatusEventArgs(IntPtr status)
+            Status = status;
+        }
 
         #endregion Public Methods and Constructors
 
@@ -57,10 +55,7 @@ namespace Imapi.Net.Interop
         /// Gets the status of this operation.
         /// </summary>
         /// <value>The status.</value>
-        public IntPtr Status
-        {
-            get { return _status; } // End get
-        } // End Status
+        public IntPtr Status { get; private set; }
 
         #endregion Public Properties
     }

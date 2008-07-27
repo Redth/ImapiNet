@@ -45,9 +45,7 @@ namespace Imapi.Net
     /// </summary>
     public class DiscMaster : Disposable
     {
-        private readonly object _syncRoot = new object();
         private IDiscMaster _discMaster;
-        private DiscRecorderCollection _discRecorders;
         private bool _jolietAddDataCancel;
         private JolietDiscMaster _jolietDiscMaster;
         private DiscMasterProgressEvents _progressEvents;
@@ -122,6 +120,7 @@ namespace Imapi.Net
         {
             InitializeImapi();
             //System.Threading.Thread.GetDomain().UnhandledException += new UnhandledExceptionEventHandler(DiscMaster_UnhandledException);
+            SyncRoot = new object();
         }
 
 
@@ -174,59 +173,61 @@ namespace Imapi.Net
         [MethodImpl( MethodImplOptions.Synchronized )]
         public void RecordDisc( int simulate, int ejectWhenComplete )
         {
-            if ( !_jolietAddDataCancel )
+            if ( _jolietAddDataCancel )
             {
-                try
+                return;
+            }
+
+            try
+            {
+                _discMaster.RecordDisc( simulate, ejectWhenComplete );
+            }
+            catch ( COMException ex )
+            {
+                switch ( (uint) ex.ErrorCode )
                 {
-                    _discMaster.RecordDisc( simulate, ejectWhenComplete );
-                }
-                catch ( COMException ex )
-                {
-                    switch ( (uint) ex.ErrorCode )
-                    {
-                        case ErrorCodes.IMAPI_E_NOTOPENED:
-                            throw new DiscMasterNotOpenedException();
-                        case ErrorCodes.IMAPI_E_WRONGDISC:
-                            throw new WrongDiscException();
-                        case ErrorCodes.IMAPI_E_NOACTIVEFORMAT:
-                            throw new NoActiveFormatException();
-                        case ErrorCodes.IMAPI_E_NOACTIVERECORDER:
-                            throw new NoActiveRecorderException();
-                        case ErrorCodes.IMAPI_E_USERABORT:
-                            throw new UserAbortException();
-                        case ErrorCodes.IMAPI_E_GENERIC:
-                            throw new GenericUnexpectedUnexplainedException();
-                        case ErrorCodes.IMAPI_E_MEDIUM_NOTPRESENT:
-                            throw new MediaNotPresentException();
-                        case ErrorCodes.IMAPI_E_DEVICE_NOTACCESSIBLE:
-                            throw new DeviceNotAccessibleException();
-                        case ErrorCodes.IMAPI_E_DEVICE_NOTPRESENT:
-                            throw new DeviceNotPresentException();
-                        case ErrorCodes.IMAPI_E_INITIALIZE_WRITE:
-                            throw new InitializeWriteException();
-                        case ErrorCodes.IMAPI_E_INITIALIZE_ENDWRITE:
-                            throw new InitializeCloseException();
-                        case ErrorCodes.IMAPI_E_FILESYSTEM:
-                            throw new FileSystemAccessException();
-                        case ErrorCodes.IMAPI_E_DISCINFO:
-                            throw new DiscInfoException();
-                        case ErrorCodes.IMAPI_E_TRACKOPEN:
-                            throw new TrackOpenException();
-                        case ErrorCodes.IMAPI_E_INVALIDIMAGE:
-                            throw new InvalidImageException();
-                        case ErrorCodes.IMAPI_E_LOSS_OF_STREAMING:
-                            throw new ContentStreamingException();
-                        case ErrorCodes.IMAPI_E_COMPRESSEDSTASH:
-                            throw new CompressedStashException();
-                        case ErrorCodes.IMAPI_E_ENCRYPTEDSTASH:
-                            throw new EncryptedStashException();
-                        case ErrorCodes.IMAPI_E_NOTENOUGHDISKFORSTASH:
-                            throw new NotEnoughDiskForStashException();
-                        case ErrorCodes.IMAPI_E_REMOVABLESTASH:
-                            throw new RemovableStashException();
-                        default:
-                            throw;
-                    }
+                    case ErrorCodes.IMAPI_E_NOTOPENED:
+                        throw new DiscMasterNotOpenedException();
+                    case ErrorCodes.IMAPI_E_WRONGDISC:
+                        throw new WrongDiscException();
+                    case ErrorCodes.IMAPI_E_NOACTIVEFORMAT:
+                        throw new NoActiveFormatException();
+                    case ErrorCodes.IMAPI_E_NOACTIVERECORDER:
+                        throw new NoActiveRecorderException();
+                    case ErrorCodes.IMAPI_E_USERABORT:
+                        throw new UserAbortException();
+                    case ErrorCodes.IMAPI_E_GENERIC:
+                        throw new GenericUnexpectedUnexplainedException();
+                    case ErrorCodes.IMAPI_E_MEDIUM_NOTPRESENT:
+                        throw new MediaNotPresentException();
+                    case ErrorCodes.IMAPI_E_DEVICE_NOTACCESSIBLE:
+                        throw new DeviceNotAccessibleException();
+                    case ErrorCodes.IMAPI_E_DEVICE_NOTPRESENT:
+                        throw new DeviceNotPresentException();
+                    case ErrorCodes.IMAPI_E_INITIALIZE_WRITE:
+                        throw new InitializeWriteException();
+                    case ErrorCodes.IMAPI_E_INITIALIZE_ENDWRITE:
+                        throw new InitializeCloseException();
+                    case ErrorCodes.IMAPI_E_FILESYSTEM:
+                        throw new FileSystemAccessException();
+                    case ErrorCodes.IMAPI_E_DISCINFO:
+                        throw new DiscInfoException();
+                    case ErrorCodes.IMAPI_E_TRACKOPEN:
+                        throw new TrackOpenException();
+                    case ErrorCodes.IMAPI_E_INVALIDIMAGE:
+                        throw new InvalidImageException();
+                    case ErrorCodes.IMAPI_E_LOSS_OF_STREAMING:
+                        throw new ContentStreamingException();
+                    case ErrorCodes.IMAPI_E_COMPRESSEDSTASH:
+                        throw new CompressedStashException();
+                    case ErrorCodes.IMAPI_E_ENCRYPTEDSTASH:
+                        throw new EncryptedStashException();
+                    case ErrorCodes.IMAPI_E_NOTENOUGHDISKFORSTASH:
+                        throw new NotEnoughDiskForStashException();
+                    case ErrorCodes.IMAPI_E_REMOVABLESTASH:
+                        throw new RemovableStashException();
+                    default:
+                        throw;
                 }
             }
         }
@@ -269,7 +270,7 @@ namespace Imapi.Net
         /// </summary>
         public void CancelBurn()
         {
-            int cancel = 1;
+            var cancel = 1;
             _jolietAddDataCancel = true;
             QueryCancelRequest( out cancel );
         } // End void CancelBurn()
@@ -287,8 +288,7 @@ namespace Imapi.Net
         /// runtime from inside the finalizer and you should not reference 
         /// other objects. Only unmanaged resources can be disposed.
         /// </param>
-        //[EnvironmentPermissionAttribute(SecurityAction.LinkDemand, Unrestricted = true)]
-        private void Dispose( bool disposing )
+        protected override void Dispose( bool disposing )
         {
             // Check to see if Dispose has already been called.
             if ( disposing && !IsDisposed )
@@ -332,9 +332,9 @@ namespace Imapi.Net
                     _discMaster = null;
                 }
 
-                if ( _discRecorders != null )
+                if ( DiscRecorders != null )
                 {
-                    _discRecorders.Dispose();
+                    DiscRecorders.Dispose();
                 }
             }
             base.Dispose( disposing );
@@ -370,7 +370,7 @@ namespace Imapi.Net
 
             // Set up progress events
             _progressEvents = new DiscMasterProgressEvents( this );
-            IntPtr cookie = IntPtr.Zero;
+            var cookie = IntPtr.Zero;
             IDiscMasterProgressEvents iprgEvents = _progressEvents;
 
             try
@@ -390,7 +390,7 @@ namespace Imapi.Net
             _progressEvents.Cookie = cookie;
 
             // Recorders collection
-            _discRecorders = new DiscRecorderCollection( _discMaster );
+            DiscRecorders = new DiscRecorderCollection( _discMaster );
         } // End void InitializeImapi()
 
         #endregion Private Methods
@@ -630,19 +630,13 @@ namespace Imapi.Net
         /// Gets the sync root.
         /// </summary>
         /// <value>The sync root.</value>
-        public object SyncRoot
-        {
-            get { return _syncRoot; }
-        }
+        public object SyncRoot { get; private set; }
 
         /// <summary>
         /// Gets the collection of disc recorders on this system.
         /// </summary>
         /// <value>The disc recorders.</value>
-        public DiscRecorderCollection DiscRecorders
-        {
-            get { return _discRecorders; }
-        }
+        public DiscRecorderCollection DiscRecorders { get; private set; }
 
 
         /// <summary>
@@ -680,7 +674,7 @@ namespace Imapi.Net
                         throw;
                     }
 
-                    _discRecorders.Refresh();
+                    DiscRecorders.Refresh();
 
                     _redbookDiscMaster = new RedbookDiscMaster( this, (IRedbookDiscMaster) objRedbook );
                     Monitor.Exit( _discMaster );
@@ -725,7 +719,7 @@ namespace Imapi.Net
                         throw;
                     }
 
-                    _discRecorders.Refresh();
+                    DiscRecorders.Refresh();
                     _jolietDiscMaster = new JolietDiscMaster( this, (IJolietDiscMaster) objJoliet );
                     Monitor.Exit( _discMaster );
                 }
@@ -800,5 +794,3 @@ namespace Imapi.Net
         // End void Dispose(bool disposing)
     }
 }
-
-// End namespace Imapi.Net.Interop

@@ -23,13 +23,13 @@
 
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Runtime.InteropServices;
 using Imapi.Net.ObjectModel;
 using Imapi.Net.Properties;
 using Imapi.Net.Interop.Enumerations;
 using Imapi.Net.Interop.Exceptions;
 using Imapi.Net.Interop.Interfaces;
-using Imapi.Net.Interop.Structs;
 
 #endregion Using Directives
 
@@ -52,7 +52,7 @@ namespace Imapi.Net.Interop
         #region Public Methods and Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Property&lt;T&gt;"/> class.
+        /// Initializes a new instance of the <see cref="Property"/> class.
         /// </summary>
         /// <param name="name">The name.</param>
         /// <param name="value">The value.</param>
@@ -67,7 +67,7 @@ namespace Imapi.Net.Interop
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Property&lt;T&gt;"/> class.
+        /// Initializes a new instance of the <see cref="Property"/> class.
         /// </summary>
         /// <param name="id">The id.</param>
         /// <param name="name">The name.</param>
@@ -84,7 +84,7 @@ namespace Imapi.Net.Interop
 
         /// <summary>
         /// Releases unmanaged resources and performs other cleanup operations before the
-        /// <see cref="Imapi.Net.Property&lt;T&gt;"/> is reclaimed by garbage collection.
+        /// <see cref="Property"/> is reclaimed by garbage collection.
         /// </summary>
         ~Property()
         {
@@ -144,7 +144,7 @@ namespace Imapi.Net.Interop
             }
             catch ( Exception ex )
             {
-                Trace.WriteLine( string.Format( "Error getting {0}.{1}{2}{3}{4}", propertyID, Environment.NewLine,
+                Trace.WriteLine( string.Format( CultureInfo.CurrentCulture, "Error getting {0}.{1}{2}{3}{4}", propertyID, Environment.NewLine,
                                                 ex.Message, Environment.NewLine, ex.StackTrace ) );
                 throw;
             }
@@ -205,7 +205,7 @@ namespace Imapi.Net.Interop
             }
             catch ( Exception ex )
             {
-                Trace.WriteLine( string.Format( "Error setting {0}.{1}{2}{3}{4}", propertyID, Environment.NewLine,
+                Trace.WriteLine( string.Format( CultureInfo.CurrentCulture, "Error setting {0}.{1}{2}{3}{4}", propertyID, Environment.NewLine,
                                                 ex.Message, Environment.NewLine, ex.StackTrace ) );
                 throw;
             }
@@ -288,8 +288,8 @@ namespace Imapi.Net.Interop
             }
             catch ( COMException ce )
             {
-                Trace.WriteLine( "Error getting AudioGapSize." );
-                Trace.WriteLine( string.Format( "{0}{1}{2}", ce.Message, Environment.NewLine, ce.StackTrace ) );
+                Trace.WriteLine( CultureInfo.CurrentCulture, "Error getting AudioGapSize." );
+                Trace.WriteLine( string.Format( CultureInfo.CurrentCulture, "{0}{1}{2}", ce.Message, Environment.NewLine, ce.StackTrace ) );
                 return -1;
             }
             finally
@@ -299,7 +299,7 @@ namespace Imapi.Net.Interop
 
             try
             {
-                return Int32.Parse( rgPropVar.ToString() );
+                return Int32.Parse( rgPropVar.ToString(), CultureInfo.CurrentCulture );
             }
             catch ( Exception ex )
             {

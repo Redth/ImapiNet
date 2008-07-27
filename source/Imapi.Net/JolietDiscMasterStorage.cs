@@ -67,7 +67,6 @@ namespace Imapi.Net
 
         private readonly string _folderName;
         private readonly DiscMaster _owner;
-        private bool _disposed;
         private Dictionary<string, string> _files;
         private JolietStorage _storage;
         // Hashtable of folders; key is name, value is folder
@@ -224,7 +223,7 @@ namespace Imapi.Net
         /// runtime from inside the finalizer and you should not reference 
         /// other objects. Only unmanaged resources can be disposed.
         /// </param>
-        protected virtual void Dispose( bool disposing )
+        protected override void Dispose( bool disposing )
         {
             // Check to see if Dispose has already been called.
             if ( disposing && !IsDisposed )

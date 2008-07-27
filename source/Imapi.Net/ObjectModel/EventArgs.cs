@@ -33,17 +33,9 @@ namespace Imapi.Net.ObjectModel
     /// <typeparam name="TData">The data type to contain.</typeparam>
     public class EventArgs<TData> : EventArgs
     {
-        public new static readonly EventArgs<TData> Empty;
+        public new static readonly EventArgs<TData> Empty = new EventArgs<TData>();
 
         private readonly TData eventData;
-
-        /// <summary>
-        /// Initializes the <see cref="EventArgs&lt;T&gt;"/> class.
-        /// </summary>
-        static EventArgs()
-        {
-            Empty = new EventArgs<TData>();
-        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EventArgs&lt;T&gt;"/> class.

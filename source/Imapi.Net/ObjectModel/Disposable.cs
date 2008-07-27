@@ -24,8 +24,11 @@
 using System;
 using System.Collections;
 using System.Diagnostics;
+using System.Globalization;
 using System.Reflection;
+using System.Security.Permissions;
 using System.Text;
+using log4net;
 
 #endregion Using Directives
 
@@ -37,7 +40,8 @@ namespace Imapi.Net.ObjectModel
     [Serializable]
     public abstract class Disposable : IDisposable
     {
-        private string _source = GetPreambleMessage( typeof (Disposable) );
+        private static readonly ILog _logger = LogManager.GetLogger( MethodBase.GetCurrentMethod().DeclaringType );
+        private readonly string _source = GetPreambleMessage( typeof (Disposable) );
 
         /// <summary>
         /// Gets a value indicating whether this instance is disposed.
@@ -116,7 +120,7 @@ namespace Imapi.Net.ObjectModel
             }
             catch ( Exception ex )
             {
-                return string.Format( "{0}: {1}{2}", ex.Message, Environment.NewLine, ex.StackTrace );
+                return string.Format( CultureInfo.CurrentCulture, "{0}: {1}{2}", ex.Message, Environment.NewLine, ex.StackTrace );
             }
 #else
             return string.Empty;
@@ -159,6 +163,7 @@ namespace Imapi.Net.ObjectModel
         /// A call to base.Dispose( disposing ); must be made by all inheriting classes.
         /// </remarks>
         /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        [EnvironmentPermission( SecurityAction.LinkDemand, Unrestricted = true )]
         protected virtual void Dispose( bool disposing )
         {
             IsDisposed = true;
@@ -175,8 +180,12 @@ namespace Imapi.Net.ObjectModel
         /// </summary>
         ~Disposable()
         {
-            Console.Error.WriteLine( "{0} was collected by the finalizer.{1}[Source:{1}{2}{1}]", GetType(),
+            if ( _logger.IsErrorEnabled )
+            {
+                _logger.ErrorFormat( "{0} was collected by the finalizer.{1}[Source:{1}{2}{1}]", GetType(),
                                      Environment.NewLine, _source );
+            }
+
             Dispose( false );
         }
 
@@ -198,26 +207,28 @@ namespace Imapi.Net.ObjectModel
         /// <param name="collection">The collection.</param>
         public static void DisposeCollection( IEnumerable collection )
         {
-            if ( collection != null )
+            if ( collection == null )
             {
-                foreach ( var item in collection )
-                {
-                    if ( item is IDictionary )
-                    {
-                        DisposeDictionary( item as IDictionary );
-                    }
-                    else if ( item is IEnumerable )
-                    {
-                        DisposeCollection( item as IEnumerable );
-                    }
-                    else
-                    {
-                        DisposeMember( item as IDisposable );
-                    }
-                }
-
-                DisposeMember( collection as IDisposable );
+                return;
             }
+
+            foreach ( var item in collection )
+            {
+                if ( item is IDictionary )
+                {
+                    DisposeDictionary( item as IDictionary );
+                }
+                else if ( item is IEnumerable )
+                {
+                    DisposeCollection( item as IEnumerable );
+                }
+                else
+                {
+                    DisposeMember( item as IDisposable );
+                }
+            }
+
+            DisposeMember( collection as IDisposable );
         }
 
         /// <summary>
@@ -230,6 +241,7 @@ namespace Imapi.Net.ObjectModel
             {
                 return;
             }
+
             foreach ( DictionaryEntry dictionaryEntry in dictionary )
             {
                 if ( dictionaryEntry.Key is IDictionary )

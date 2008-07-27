@@ -24,12 +24,12 @@
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
-using Imapi.Net.Properties;
 using Imapi.Net.Interop.Enumerations;
 using Imapi.Net.Interop.Util;
+using Imapi.Net.Properties;
 using STATSTG=System.Runtime.InteropServices.ComTypes.STATSTG;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop
 {
