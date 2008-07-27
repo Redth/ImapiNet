@@ -23,12 +23,11 @@
 
 using System;
 using System.Runtime.InteropServices;
+using Imapi.Net.Interop.Interfaces;
 using Imapi.Net.ObjectModel;
 using Imapi.Net.Properties;
-using Imapi.Net.Interop.Interfaces;
-using Imapi.Net;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net
 {

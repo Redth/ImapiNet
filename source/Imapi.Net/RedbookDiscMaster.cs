@@ -28,13 +28,12 @@ using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using System.Threading;
 using Imapi.Net.Interop;
-using Imapi.Net.ObjectModel;
-using Imapi.Net.Properties;
 using Imapi.Net.Interop.Exceptions;
 using Imapi.Net.Interop.Interfaces;
-using Imapi.Net;
+using Imapi.Net.ObjectModel;
+using Imapi.Net.Properties;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net
 {
@@ -294,7 +293,7 @@ namespace Imapi.Net
 
                 if ( cancel == 0 )
                 {
-                    var size = 0;
+                    int size = 0;
                     while ( ( size = rawAudioStream.Read( _buffer.Bytes, 0, _buffer.Size ) ) > 0 )
                     {
                         size = ZeroTrailingBufferBytes( size );
@@ -451,7 +450,7 @@ namespace Imapi.Net
         {
             get
             {
-                var blocks = 0;
+                int blocks = 0;
                 Monitor.Enter( _redbookMaster );
                 try
                 {
@@ -482,7 +481,7 @@ namespace Imapi.Net
         {
             get
             {
-                var blockSize = 0;
+                int blockSize = 0;
                 Monitor.Enter( _redbookMaster );
                 try
                 {
@@ -513,7 +512,7 @@ namespace Imapi.Net
         {
             get
             {
-                var blocks = 0;
+                int blocks = 0;
                 Monitor.Enter( _redbookMaster );
                 try
                 {
@@ -544,7 +543,7 @@ namespace Imapi.Net
         {
             get
             {
-                var blocks = 0;
+                int blocks = 0;
                 Monitor.Enter( _redbookMaster );
                 try
                 {
@@ -575,7 +574,7 @@ namespace Imapi.Net
         {
             get
             {
-                var tracks = 0;
+                int tracks = 0;
                 Monitor.Enter( _redbookMaster );
                 try
                 {

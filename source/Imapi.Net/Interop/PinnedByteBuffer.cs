@@ -28,7 +28,7 @@ using System.Security.Permissions;
 using Imapi.Net.ObjectModel;
 using Imapi.Net.Properties;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop
 {

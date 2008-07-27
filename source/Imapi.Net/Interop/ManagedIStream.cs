@@ -26,14 +26,14 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
-using Imapi.Net.ObjectModel;
-using Imapi.Net.Properties;
 using Imapi.Net.Interop.Enumerations;
 using Imapi.Net.Interop.Exceptions;
 using Imapi.Net.Interop.Util;
+using Imapi.Net.ObjectModel;
+using Imapi.Net.Properties;
 using STATSTG=System.Runtime.InteropServices.ComTypes.STATSTG;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop
 {
@@ -146,7 +146,7 @@ namespace Imapi.Net.Interop
         /// <param name="plibNewPosition">On successful return, contains the offset of the seek pointer from the beginning of the stream.</param>
         public virtual void Seek( long dlibMove, int dwOrigin, IntPtr plibNewPosition )
         {
-            var seekOrigin = SeekOrigin.Current;
+            SeekOrigin seekOrigin = SeekOrigin.Current;
             switch ( dwOrigin )
             {
                 case (int) StreamSeek.Set:
@@ -210,7 +210,7 @@ namespace Imapi.Net.Interop
                 {
                     pstatstg.type = (int) STGTY.Stream;
                     pstatstg.cbSize = _stream.Length;
-                    var now = DateTime.Now;
+                    DateTime now = DateTime.Now;
                     pstatstg.mtime = ComUtilities.DateTimeToFiletime( now );
                     pstatstg.ctime = ComUtilities.DateTimeToFiletime( now );
                     pstatstg.atime = ComUtilities.DateTimeToFiletime( now );

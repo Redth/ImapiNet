@@ -26,7 +26,7 @@ using System.Runtime.InteropServices;
 using Imapi.Net.Interop.Enumerations;
 using FILETIME=System.Runtime.InteropServices.ComTypes.FILETIME;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop.Interfaces
 {

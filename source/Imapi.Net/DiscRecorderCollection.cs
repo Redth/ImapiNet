@@ -27,12 +27,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Imapi.Net.Interop;
-using Imapi.Net.Properties;
 using Imapi.Net.Interop.Exceptions;
 using Imapi.Net.Interop.Interfaces;
-using Imapi.Net;
+using Imapi.Net.Properties;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net
 {

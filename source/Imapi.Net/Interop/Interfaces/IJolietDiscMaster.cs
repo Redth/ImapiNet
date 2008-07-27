@@ -24,7 +24,7 @@
 using System.Runtime.InteropServices;
 using Imapi.Net.Interop.Exceptions;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop.Interfaces
 {

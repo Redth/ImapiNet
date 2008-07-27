@@ -30,7 +30,7 @@ using System.Security.Permissions;
 using System.Text;
 using log4net;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.ObjectModel
 {
@@ -91,8 +91,8 @@ namespace Imapi.Net.ObjectModel
 #if DEBUG
             try
             {
-                StringBuilder preamble = new StringBuilder();
-                StackTrace stackTrace = new StackTrace();
+                var preamble = new StringBuilder();
+                var stackTrace = new StackTrace();
                 MethodBase stackFrameMethod;
                 string typeName;
                 do
@@ -120,7 +120,8 @@ namespace Imapi.Net.ObjectModel
             }
             catch ( Exception ex )
             {
-                return string.Format( CultureInfo.CurrentCulture, "{0}: {1}{2}", ex.Message, Environment.NewLine, ex.StackTrace );
+                return string.Format( CultureInfo.CurrentCulture, "{0}: {1}{2}", ex.Message, Environment.NewLine,
+                                      ex.StackTrace );
             }
 #else
             return string.Empty;
@@ -212,7 +213,7 @@ namespace Imapi.Net.ObjectModel
                 return;
             }
 
-            foreach ( var item in collection )
+            foreach ( object item in collection )
             {
                 if ( item is IDictionary )
                 {

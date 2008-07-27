@@ -23,7 +23,7 @@
 
 using System;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop.Enumerations
 {

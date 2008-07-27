@@ -28,7 +28,7 @@ using System.Runtime.InteropServices;
 using Imapi.Net.Interop.Enumerations;
 using Imapi.Net.Interop.Interfaces;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop
 {
@@ -172,7 +172,7 @@ namespace Imapi.Net.Interop
         /// </summary>
         internal void Update( Property prop )
         {
-            var newValue = prop.Value;
+            object newValue = prop.Value;
             var propSpecifier = new PropSpec {ID_or_LPWSTR = prop.ID, ulKind = PrpSpec.PropID};
             _storage.WriteMultiple( 1, ref propSpecifier, ref newValue, 0 );
         }

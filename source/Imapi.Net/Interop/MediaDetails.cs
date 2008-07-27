@@ -28,7 +28,7 @@ using Imapi.Net.Interop.Enumerations;
 using Imapi.Net.Interop.Exceptions;
 using Imapi.Net.Interop.Interfaces;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop
 {

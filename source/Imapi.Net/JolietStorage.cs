@@ -24,16 +24,15 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
-using Imapi.Net.ObjectModel;
-using Imapi.Net.Properties;
 using Imapi.Net.Interop.Enumerations;
 using Imapi.Net.Interop.Exceptions;
 using Imapi.Net.Interop.Interfaces;
-using Imapi.Net;
+using Imapi.Net.ObjectModel;
+using Imapi.Net.Properties;
 using FILETIME=System.Runtime.InteropServices.ComTypes.FILETIME;
 using STATSTG=System.Runtime.InteropServices.ComTypes.STATSTG;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop
 {

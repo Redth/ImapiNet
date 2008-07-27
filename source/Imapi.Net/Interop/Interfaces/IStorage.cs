@@ -29,7 +29,7 @@ using Imapi.Net.Interop.Enumerations;
 using FILETIME=System.Runtime.InteropServices.ComTypes.FILETIME;
 using STATSTG=System.Runtime.InteropServices.ComTypes.STATSTG;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop.Interfaces
 {

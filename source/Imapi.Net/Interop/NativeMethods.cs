@@ -25,7 +25,7 @@ using System;
 using System.Runtime.InteropServices;
 using Imapi.Net.Interop.Enumerations;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop
 {
@@ -114,7 +114,7 @@ namespace Imapi.Net.Interop
         /// <param name="lpTargetPath">The lp target path.</param>
         /// <param name="ucchMax">The ucch max.</param>
         /// <returns></returns>
-        [DllImport("kernel32", CharSet = CharSet.Unicode, BestFitMapping = false, ThrowOnUnmappableChar = true)]
+        [DllImport( "kernel32", CharSet = CharSet.Unicode, BestFitMapping = false, ThrowOnUnmappableChar = true )]
         internal static extern int QueryDosDevice( [MarshalAs( UnmanagedType.LPWStr )] string lpDeviceName,
                                                    [MarshalAs( UnmanagedType.LPWStr )] string lpTargetPath, int ucchMax );
 

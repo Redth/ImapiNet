@@ -30,10 +30,9 @@ using Imapi.Net.Interop;
 using Imapi.Net.Interop.Enumerations;
 using Imapi.Net.Interop.Exceptions;
 using Imapi.Net.Interop.Interfaces;
-using Imapi.Net;
 using Imapi.Net.ObjectModel;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net
 {

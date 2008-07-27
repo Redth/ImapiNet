@@ -24,13 +24,13 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
 using Imapi.Net.Interop;
 using Imapi.Net.Interop.Enumerations;
 using Imapi.Net.Interop.Interfaces;
-using Imapi.Net;
 using STATSTG=System.Runtime.InteropServices.ComTypes.STATSTG;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net
 {
@@ -98,15 +98,15 @@ namespace Imapi.Net
             {
                 if ( _files.MoveNext() )
                 {
-                    var name = _files.Current;
-                    var stream = _owner.RequestIStream( name );
+                    string name = _files.Current;
+                    IStream stream = _owner.RequestIStream( name );
                     stream.Stat( out rgelt[0], (int) StatFlag.Default );
                     returned++;
                 } // End if (_files.MoveNext())
                 else if ( _subFolders.MoveNext() )
                 {
-                    var name = _subFolders.Current;
-                    var storage = _owner.RequestStorage( name );
+                    string name = _subFolders.Current;
+                    IStorage storage = _owner.RequestStorage( name );
                     storage.Stat( out rgelt[0], StatFlag.Default );
                     returned++;
                 } // End else if (_subFolders.MoveNext())

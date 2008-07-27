@@ -24,7 +24,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop.Interfaces
 {

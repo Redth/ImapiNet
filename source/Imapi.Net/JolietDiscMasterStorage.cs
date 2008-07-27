@@ -29,10 +29,9 @@ using System.IO;
 using System.Runtime.InteropServices.ComTypes;
 using Imapi.Net.Interop;
 using Imapi.Net.Interop.Interfaces;
-using Imapi.Net;
 using Imapi.Net.ObjectModel;
 
-#endregion Using Directives
+#endregion
 
 //////////////////////////////////////////////////////////////////////////////// 
 //   TODO:          Currently all folder/file creation is based on the local

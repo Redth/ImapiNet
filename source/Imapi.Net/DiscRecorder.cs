@@ -28,14 +28,13 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using Imapi.Net.Interop;
-using Imapi.Net.ObjectModel;
-using Imapi.Net.Properties;
 using Imapi.Net.Interop.Enumerations;
 using Imapi.Net.Interop.Exceptions;
 using Imapi.Net.Interop.Interfaces;
-using Imapi.Net;
+using Imapi.Net.ObjectModel;
+using Imapi.Net.Properties;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net
 {

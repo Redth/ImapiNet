@@ -30,13 +30,13 @@ using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using System.Threading;
 using Imapi.Net.Interop;
-using Imapi.Net.ObjectModel;
-using Imapi.Net.Properties;
 using Imapi.Net.Interop.Enumerations;
 using Imapi.Net.Interop.Exceptions;
 using Imapi.Net.Interop.Interfaces;
+using Imapi.Net.ObjectModel;
+using Imapi.Net.Properties;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net
 {
@@ -270,7 +270,7 @@ namespace Imapi.Net
         /// </summary>
         public void CancelBurn()
         {
-            var cancel = 1;
+            int cancel = 1;
             _jolietAddDataCancel = true;
             QueryCancelRequest( out cancel );
         } // End void CancelBurn()
@@ -370,7 +370,7 @@ namespace Imapi.Net
 
             // Set up progress events
             _progressEvents = new DiscMasterProgressEvents( this );
-            var cookie = IntPtr.Zero;
+            IntPtr cookie = IntPtr.Zero;
             IDiscMasterProgressEvents iprgEvents = _progressEvents;
 
             try
@@ -656,7 +656,7 @@ namespace Imapi.Net
                 {
                     Monitor.Enter( _discMaster );
                     object objRedbook = null;
-                    Guid iidRedbook = new Guid( Resources.IRedbookDiscMasterGUID );
+                    var iidRedbook = new Guid( Resources.IRedbookDiscMasterGUID );
 
                     try
                     {
@@ -701,7 +701,7 @@ namespace Imapi.Net
                 {
                     Monitor.Enter( _discMaster );
                     object objJoliet = null;
-                    Guid iidJoliet = new Guid( Resources.IJolietDiscMasterGUID );
+                    var iidJoliet = new Guid( Resources.IJolietDiscMasterGUID );
 
                     try
                     {
@@ -772,8 +772,8 @@ namespace Imapi.Net
             get
             {
                 object discMaster = null;
-                Guid clsIdDiscMaster = new Guid( Resources.MSDiscMasterObjGUID );
-                Guid iidDiscMaster = new Guid( Resources.IDiscMasterGUID );
+                var clsIdDiscMaster = new Guid( Resources.MSDiscMasterObjGUID );
+                var iidDiscMaster = new Guid( Resources.IDiscMasterGUID );
                 int hResult = NativeMethods.CoCreateInstance(
                     ref clsIdDiscMaster,
                     IntPtr.Zero,

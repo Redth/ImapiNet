@@ -25,7 +25,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices.ComTypes;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop.Util
 {

@@ -23,7 +23,7 @@
 
 using System.Runtime.InteropServices;
 
-#endregion Using Directives
+#endregion
 
 ////////////////////////////////////////////////////////////////////////////////
 //   TODO:          Is PreserveSig needed on Next(uint, out IDiscRecorder, out uint)?

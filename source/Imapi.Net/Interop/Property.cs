@@ -25,13 +25,13 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.InteropServices;
-using Imapi.Net.ObjectModel;
-using Imapi.Net.Properties;
 using Imapi.Net.Interop.Enumerations;
 using Imapi.Net.Interop.Exceptions;
 using Imapi.Net.Interop.Interfaces;
+using Imapi.Net.ObjectModel;
+using Imapi.Net.Properties;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop
 {
@@ -144,7 +144,8 @@ namespace Imapi.Net.Interop
             }
             catch ( Exception ex )
             {
-                Trace.WriteLine( string.Format( CultureInfo.CurrentCulture, "Error getting {0}.{1}{2}{3}{4}", propertyID, Environment.NewLine,
+                Trace.WriteLine( string.Format( CultureInfo.CurrentCulture, "Error getting {0}.{1}{2}{3}{4}", propertyID,
+                                                Environment.NewLine,
                                                 ex.Message, Environment.NewLine, ex.StackTrace ) );
                 throw;
             }
@@ -205,7 +206,8 @@ namespace Imapi.Net.Interop
             }
             catch ( Exception ex )
             {
-                Trace.WriteLine( string.Format( CultureInfo.CurrentCulture, "Error setting {0}.{1}{2}{3}{4}", propertyID, Environment.NewLine,
+                Trace.WriteLine( string.Format( CultureInfo.CurrentCulture, "Error setting {0}.{1}{2}{3}{4}", propertyID,
+                                                Environment.NewLine,
                                                 ex.Message, Environment.NewLine, ex.StackTrace ) );
                 throw;
             }
@@ -289,7 +291,8 @@ namespace Imapi.Net.Interop
             catch ( COMException ce )
             {
                 Trace.WriteLine( CultureInfo.CurrentCulture, "Error getting AudioGapSize." );
-                Trace.WriteLine( string.Format( CultureInfo.CurrentCulture, "{0}{1}{2}", ce.Message, Environment.NewLine, ce.StackTrace ) );
+                Trace.WriteLine( string.Format( CultureInfo.CurrentCulture, "{0}{1}{2}", ce.Message, Environment.NewLine,
+                                                ce.StackTrace ) );
                 return -1;
             }
             finally

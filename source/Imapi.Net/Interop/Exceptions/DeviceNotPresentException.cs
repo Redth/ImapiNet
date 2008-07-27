@@ -25,7 +25,7 @@ using System;
 using System.Runtime.Serialization;
 using Imapi.Net.Properties;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop.Exceptions
 {

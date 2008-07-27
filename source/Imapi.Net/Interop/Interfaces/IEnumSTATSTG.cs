@@ -24,7 +24,7 @@
 using System.Runtime.InteropServices;
 using STATSTG=System.Runtime.InteropServices.ComTypes.STATSTG;
 
-#endregion Using Directives
+#endregion
 
 namespace Imapi.Net.Interop.Interfaces
 {
